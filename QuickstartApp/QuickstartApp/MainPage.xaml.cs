@@ -4,6 +4,8 @@
 using System;
 using Xamarin.Forms;
 using Microsoft.Azure.Mobile.Crashes;
+using System.Windows.Input;
+using System.Reflection;
 
 namespace QuickstartApp
 {
@@ -11,11 +13,21 @@ namespace QuickstartApp
     {
         public MainPage()
         {
+            this.GoToPageCommand = new Command<Type>(this.GoToPage);
             InitializeComponent();
         }
-        private void OnCrashMeButtonClicked(object sender, EventArgs e)
+
+        public ICommand GoToPageCommand { get; private set; }
+
+        private void GoToPage(Type pageType)
         {
-            Crashes.GenerateTestCrash();
+            var page = (Page)Activator.CreateInstance(pageType);
+            Navigation.PushAsync(page);
+        }
+
+        private void OnGoToPageClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CrashesPage());
         }
     }
 }

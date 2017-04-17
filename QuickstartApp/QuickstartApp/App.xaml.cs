@@ -1,7 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using System;
+
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
+using Xamarin.Forms;
 
 namespace QuickstartApp
 {
@@ -11,11 +13,13 @@ namespace QuickstartApp
         {
             InitializeComponent();
 
-            MainPage = new QuickstartApp.MainPage();
+            MainPage = new NavigationPage(new QuickstartApp.MainPage());
         }
 
         protected override void OnStart()
         {
+            CrashesPage.Initialize();
+
             /* 
              * Start Mobile Center SDK
              * Remember to replace {IOS_APP_SECRET} and {ANDROID_APP_SECRET} with your actual app secrets

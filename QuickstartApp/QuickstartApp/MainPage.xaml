@@ -1,9 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:QuickstartApp"
-             x:Class="QuickstartApp.MainPage">
+             x:Class="QuickstartApp.MainPage"
+             Title="Mobile Center Samples"
+             x:Name="page">
 
-    <Button Text="Crash me" Clicked="OnCrashMeButtonClicked" HorizontalOptions="Center" VerticalOptions="Center"/>
+  <StackLayout BindingContext="{x:Reference Name=page}" Padding="10, 20">
+
+    <Label>This sample app will help you onboard to Analytics and Crashes services.</Label>
+
+    <Label Margin="0, 20">Before running the samples for the first time go to App.xaml.cs file and replace placeholders with actual app secrets. You can get app secrets from the portal.</Label>
+
+    <Label>Select Mobile Center service</Label>
+    <Button Text="Crashes" Command="{Binding GoToPageCommand}" CommandParameter="{x:Type local:CrashesPage}" />
+    <Button Text="Analytics" Command="{Binding GoToPageCommand}" CommandParameter="{x:Type local:AnalyticsPage}" />
+  </StackLayout>
 
 </ContentPage>

@@ -1,0 +1,30 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuickstartApp.CrashesPage"
+             x:Name="page"
+             Title="Crashes">
+
+  <ScrollView>
+    <StackLayout BindingContext="{x:Reference Name=page}" Padding="10, 20">
+      <Label>Once you set up Crashes module in your application, it will automatically start logging crashes in the device's local storage. When the user opens the application again, all pending crash logs will automatically be forwarded to Mobile Center.</Label>
+
+      <Label Margin="0, 20, 0, 0">You can enable or disable Crashes module by setting Crashes.Enabled property. If disabled, it will not report crashes for the app.</Label>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+        <Label Text="Crashes Module Enabled: " VerticalOptions="Center" />
+        <Switch IsToggled="{Binding Enabled, Mode=TwoWay}" />
+      </StackLayout>
+
+      <Label Margin="0, 20, 0, 0">To send a crash report, run the app without debugging and click Simulate Crash button. Then restart the app and navigate to Crashes to get a notification.</Label>
+      <Label>By default the SDK automatically sends crash reports to Mobile Center. However, you can tell it to wait for user confirmation. Your app is then responsible for obtaining confirmation. This is what this app does by default, but you can turn it off in code.</Label>
+      <Button Text="Simulate Crash" VerticalOptions="Center" Clicked="OnSimulateCrashClicked" />
+
+      <StackLayout IsVisible="{Binding HasCrashedInLastSession}" Margin="0, 20">
+        <Label TextColor="Red" Text="The app crashed during last session. You can get details about the last crash." />
+        <Button Text="Get Crash Report" Clicked="OnGetCrashReportClicked" />
+        <Label x:Name="crashReport" />
+      </StackLayout>
+
+    </StackLayout>
+  </ScrollView>
+
+</ContentPage>
