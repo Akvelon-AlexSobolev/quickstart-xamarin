@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuickstartApp.BuildPage"
+             Title="Build">
+    <ScrollView>
+        <StackLayout Padding="10, 20">
+            <Label>Mobile Center helps you build mobile apps. Currently, you can build apps hosted on Git repositories in GitHub, Bitbucket and Visual Studio Team Services (VSTS).</Label>
+            <Label Margin="0, 20">To try it out, fork GitHub repository that you got this sample app from.</Label>
+            <Label>Once you have this app on GitHub, you can start building it. Go to Build service in the portal. First you need to connect to your code repository service account (GitHub in this case). After that you should be able to select a repository and a branch where your app lives. Then you can set up this branch to build the app every time a commit is made.</Label>
+            <Label Margin="0, 20">Mobile Center can also launch a successfully built app on a real device using Mobile Center Test to validate your latest build is working.</Label>
+            <Label>First, you need a subscription to Mobile Center Test before you can enable launch test. If you're a first-time user of Mobile Center Test, there's a free trial. When you have an active subscription, all you’ll need to do is to turn on 'Run a launch test on a device' option in branch settings. New builds will now include a launch test so that you know whether your app starts on a physical device.</Label>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

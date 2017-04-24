@@ -2,10 +2,8 @@
 #define DEBUG
 
 using System;
-using Xamarin.Forms;
-using Microsoft.Azure.Mobile.Crashes;
 using System.Windows.Input;
-using System.Reflection;
+using Xamarin.Forms;
 
 namespace QuickstartApp
 {
