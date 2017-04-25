@@ -11,6 +11,7 @@ namespace QuickstartApp
         public AnalyticsPage()
         {
             InitializeComponent();
+            this.SetModuleSwitchText();
         }
 
         /// <summary>
@@ -19,7 +20,19 @@ namespace QuickstartApp
         public bool Enabled
         {
             get { return Analytics.Enabled; }
-            set { Analytics.Enabled = value; }
+            set
+            {
+                Analytics.Enabled = value;
+                this.SetModuleSwitchText();
+            }
+        }
+
+        private void SetModuleSwitchText()
+        {
+            if (this.moduleSwitchLabel != null)
+            {
+                this.moduleSwitchLabel.Text = "Analytics module is now " + (Enabled ? "enabled  " : "disabled ");
+            }
         }
 
         private void OnTrackEventClicked(object sender, EventArgs e)

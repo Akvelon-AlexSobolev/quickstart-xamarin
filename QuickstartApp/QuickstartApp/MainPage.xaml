@@ -14,8 +14,8 @@
         <Button Text="Go to Build" Command="{Binding GoToPageCommand}" CommandParameter="{x:Type local:BuildPage}" />
 
         <Label Margin="0, 20, 0, 0">Learn how to use other services and see samples:</Label>
-        <Button Text="Go to Crashes" Command="{Binding GoToPageCommand}" CommandParameter="{x:Type local:CrashesPage}" />
-        <Button Text="Go to Analytics" Command="{Binding GoToPageCommand}" CommandParameter="{x:Type local:AnalyticsPage}" />
+        <Button Text="Go to Crashes" Command="{Binding GoToPageCommand}" CommandParameter="{x:Type local:CrashesPage}" AutomationId="GoToCrashes" />
+        <Button Text="Go to Analytics" Command="{Binding GoToPageCommand}" CommandParameter="{x:Type local:AnalyticsPage}" AutomationId="GoToAnalytics" />
     </StackLayout>
 
 </ContentPage>

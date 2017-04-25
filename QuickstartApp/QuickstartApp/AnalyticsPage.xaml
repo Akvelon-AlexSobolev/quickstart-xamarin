@@ -12,15 +12,15 @@
             <Label Margin="0, 20">Once the Analytics module is included in your app and the SDK is started, it will automatically track sessions, device properties. You don’t need to add any additional code. Open the app in the portal and go to Analytics - you should already see some data.</Label>
 
             <Label>You can enable or disable Analytics module by setting Analytics.Enabled property. If disabled, it will not collect any more analytics information for the app.</Label>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                <Label Text="Analytics Module Enabled: " VerticalOptions="Center" />
-                <Switch IsToggled="{Binding Enabled, Mode=TwoWay}" />
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="moduleSwitchLabel" VerticalOptions="Center" AutomationId="ModuleSwitchLabel" />
+                <Switch IsToggled="{Binding Enabled, Mode=TwoWay}" AutomationId="ModuleSwitch" />
             </StackLayout>
 
             <Label Margin="0, 20, 0, 0">You can track your own custom events to know what's happening in your app.</Label>
             <Label>Enter event name to track:</Label>
-            <Entry x:Name="eventName" FontSize="Small" Placeholder="Event name" Text="Sample Event" TextChanged="OnEventNameChanged" />
-            <Button x:Name="trackEvent" Text="Track Event" Clicked="OnTrackEventClicked" />
+            <Entry x:Name="eventName" FontSize="Small" Placeholder="Event name" Text="Sample Event" TextChanged="OnEventNameChanged" AutomationId="EventNameEntry" />
+            <Button x:Name="trackEvent" Text="Track Event" Clicked="OnTrackEventClicked" AutomationId="TrackEventButton" />
         </StackLayout>
     </ScrollView>
 

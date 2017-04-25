@@ -21,3 +21,4 @@ This sample app will help you onboard to Mobile Center services: Build, Analytic
 	 - Track an event with the specified name.
 	 
 	You can find code for the samples in AnalyticsPage.xaml.cs file. [Learn more](https://docs.microsoft.com/en-us/mobile-center/sdk/analytics/xamarin)
+10. Solution contains Xamarin.UITest project with examples of tests that you can run in Mobile Center Test Cloud. [Learn more](https://docs.microsoft.com/en-us/mobile-center/test-cloud)

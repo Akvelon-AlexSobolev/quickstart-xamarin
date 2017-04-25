@@ -21,6 +21,7 @@ namespace QuickstartApp
         public CrashesPage()
         {
             InitializeComponent();
+            this.SetModuleSwitchText();
 
             if (Crashes.HasCrashedInLastSession && promptToSendErrorReport)
             {
@@ -39,7 +40,11 @@ namespace QuickstartApp
         public bool Enabled
         {
             get { return Crashes.Enabled; }
-            set { Crashes.Enabled = value; }
+            set
+            {
+                Crashes.Enabled = value;
+                this.SetModuleSwitchText();
+            }
         }
 
         /// <summary>
@@ -106,6 +111,14 @@ namespace QuickstartApp
             if (crashesPage != null)
             {
                 crashesPage.NotifyAboutErrorReport();
+            }
+        }
+
+        private void SetModuleSwitchText()
+        {
+            if (this.moduleSwitchLabel != null)
+            {
+                this.moduleSwitchLabel.Text = "Crashes module is now " + (Enabled ? "enabled  " : "disabled ");
             }
         }
 
